@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-         $categories = Category::latest()->get();
+         $categories = Category::withCount('tasks')->latest()->get();
 
         return view('categories.index', compact('categories'));
         
