@@ -31,8 +31,9 @@ class Task extends Model
         return $this->belongsTo(Category::class);
     }
 
+    // 'assigned_to' is the explicit FK because Laravel would look for 'user_id' by default
     public function assignedUser()
     {
-        return $this->belongsTo(User::class,'assigned_to');
+        return $this->belongsTo(User::class, 'assigned_to');
     }
 }

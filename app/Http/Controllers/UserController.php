@@ -19,10 +19,11 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+        // Default password for all admin-created accounts — users must change it on first login
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make('password123')
+            'password' => Hash::make('password123'),
         ]);
 
         return back()->with('success', 'User created successfully');

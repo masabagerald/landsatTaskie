@@ -46,6 +46,8 @@ class TaskController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    // StoreTaskRequest has no validation rules yet; mass-assignment safety depends entirely
+    // on Task::$fillable — switch to $request->validated() once rules are defined
     public function store(Request $request)
     {
         Task::create($request->all());
