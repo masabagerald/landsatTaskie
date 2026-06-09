@@ -93,4 +93,20 @@ class TaskController extends Controller
         return back()
             ->with('success','Task deleted successfully');
     }
+
+    // Transition a task to in_progress — called from the dashboard "Start" button
+    public function start(Task $task)
+    {
+        $task->update(['status' => 'in_progress']);
+
+        return back()->with('success', 'Task started');
+    }
+
+    // Transition a task to completed and record the timestamp
+    public function complete(Task $task)
+    {
+        $task->update(['status' => 'completed', 'completed_at' => now()]);
+
+        return back()->with('success', 'Task completed');
+    }
 }

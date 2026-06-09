@@ -7,9 +7,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', fn () => redirect()->route('dashboard'));
 
 /* Route::get('/dashboard', function () {
     return view('dashboard');
@@ -26,6 +24,8 @@ Route::resource('users', UserController::class);
 
 
 Route::resource('tasks', TaskController::class);
+Route::get('/tasks/{task}/start',    [TaskController::class, 'start'])->name('tasks.start');
+Route::get('/tasks/{task}/complete', [TaskController::class, 'complete'])->name('tasks.complete');
 
  Route::get('/dashboard', [DashboardController::class, 'index'])
         ->name('dashboard');
