@@ -147,6 +147,12 @@ CACHE_STORE=database
 MAIL_MAILER=log             # emails are written to log in development
 ```
 
+## Documentation
+
+| Document | Description |
+|----------|-------------|
+| [Requirements & User Stories (PDF)](docs/Landsat_UserStories_Gerald_Masaba_v2.pdf) | Full requirements specification — stakeholders, functional & non-functional requirements, user stories with acceptance criteria, sprint backlog, traceability matrix, and definition of done |
+
 ## License
 
 This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
